@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --shadow-color: #ddd;
+    --shadow-properties: 0 0 10px 1px var(--shadow-color);
+    --shadow-properties-active: 0 0 5px 0px var(--primary-color);
+    --primary-color: #ec1f55;
+    --white-color: #fff;
+    --playlist-color: #f3f2f7;
+}
+
+/* Base */
+.btn {
+    padding: 20px 0;
+    font-size: 1.8rem;
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
+}
+
+.btn.active {
+    color: var(--primary-color);
+}
+
+.isPause {
+    display: none;
+}
+
+/* Indivial */
+.musicPlayer {
+    width: 400px;
+    margin: auto;
+    font-family: Poppins, sans-serif;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    padding: 12px;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: var(--white-color);
+    box-shadow: var(--shadow-properties);
+}
+
+.dashboard header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.dashboard .header-title {
+    flex: 4;
+}
+
+.dashboard header h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.dashboard header h2 {
+    font-size: 1.8rem;
+}
+
+/* CD */
+
+.cd-container {
+    position: relative;
+    margin: 20px;
+}
+
+.cd-wave {
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cd {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+}
+
+.cd-thumb {
+    width: 200px;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    box-shadow: var(--shadow-properties);
+}
+
+/* Control */
+.control {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control .play-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 12px;
+    box-shadow: var(--shadow-properties);
+    border-radius: 50%;
+    position: relative;
+    background-color: var(--primary-color);
+}
+
+.play-toggle-btn {
+    color: var(--white-color);
+    width: 100%;
+    line-height: 100%;
+    position: absolute;
+    font-size: 24px;
+    left: 2px;
+}
+
+.progress {
+    -webkit-appearance: none;
+    margin: 8px 12px;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+  
+  .progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+/* Playlist */
+.playlist {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 380px;
+    background-color: var(--playlist-color);
+    padding-top: 16px;
+    box-shadow: var(--shadow-properties);
+}
+
+.song-container {
+    display: flex;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: var(--shadow-properties);
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.song-container:active {
+    opacity: 0.8;
+    box-shadow: var(--shadow-properties-active)
+}
+
+.song-image {
+    width: 64px;
+    padding-top: 64px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.song-infor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0 16px;
+}
+
+.song-infor h4 {
+    font-size: 1.8rem;
+}
+
+.song-infor span {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.song-more i {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Song is playing */
+.song-container.active {
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow-properties-active);
+}
+
+.song-container.active .song-infor,
+.song-container.active .song-more
+{
+    color: var(--white-color);
+}
