@@ -234,14 +234,14 @@
                 progress.oninput = function(e) {
                     const seekTime = audio.duration*e.target.value / 100;
                     audio.currentTime = seekTime
-                // Song progress
-                audio.ontimeupdate = function() {
-                    if(audio.duration){
-                        const progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
-                        progress.value = progressPercent;
-                        console.log(progress.value)
-                    }
                 } 
+                // Song progress
+                    audio.ontimeupdate = function() {
+                        if(audio.duration){
+                            const progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
+                            progress.value = progressPercent;
+                            console.log(progress.value)
+                        }
 
             }
             
