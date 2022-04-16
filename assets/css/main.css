@@ -36,7 +36,8 @@ html {
 
 /* Indivial */
 .musicPlayer {
-    width: 400px;
+    width: 100vw;
+    max-width: 400px;
     margin: auto;
     font-family: Poppins, sans-serif;
 }
@@ -45,7 +46,8 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     padding: 12px;
     margin: auto;
     position: fixed;
